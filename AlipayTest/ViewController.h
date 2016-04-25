@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<ModelDelegate>
 
+
+
+@property (nonatomic, strong) NSMutableArray *currentArr;
 
 @end
 

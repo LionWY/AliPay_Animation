@@ -1,40 +1,53 @@
 //
-//  ViewController.m
+//  SecondViewController.m
 //  AlipayTest
 //
 //  Created by FOODING on 16/4/22.
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
 
-#import "ViewController.h"
-
 #import "SecondViewController.h"
+#import "Model.h"
 
-@interface ViewController ()
+@interface SecondViewController ()<ModelDelegate>
 {
-
     CGPoint _touchPoint;
-
 }
+
+
+@property (nonatomic, strong) NSMutableArray *currentArr;
+@property (nonatomic, strong) NSMutableArray *addArr;
 @property (nonatomic, strong) Model *currentModel;
 
 @end
 
-@implementation ViewController
+@implementation SecondViewController
+
+- (void)pop
+{
+    if (self.popBlock) {
+        self.popBlock(_addArr);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pop)];
     
     
-    _currentArr = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"100"].mutableCopy;
+    [self.navigationItem setLeftBarButtonItem:item];
     
     
+    _currentArr = @[@"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20"].mutableCopy;
     
+    _addArr = [[NSMutableArray alloc] init];
     [self loadBtnArr];
     
-    
 }
-
 /**
  *  回复原状
  */
@@ -45,9 +58,25 @@
         self.currentModel = nil;
     }
 }
-/**
- *  加载页面btn
- */
+
+- (void)deleteWith:(Model *)aModel
+{
+    if ([_currentArr count] > 1) {
+        
+        [aModel removeFromSuperview];
+        [_addArr addObject:[_currentArr objectAtIndex:aModel.tag - 100]];
+        [_currentArr removeObjectAtIndex:aModel.tag - 100];
+        
+        [self revertToBack];
+        
+        for (NSInteger i = aModel.tag; i < 101 + [_currentArr count]; i ++) {
+            Model * obj = (Model *)[self.view viewWithTag:i];
+            obj.tag --;
+            //                            [self resetModelFrameWithModel:obj];
+            [obj resetModelFrame];
+        }
+    }
+}
 - (void)loadBtnArr
 {
     for (NSInteger i = 0; i < 3; i ++) {
@@ -56,28 +85,20 @@
             
             if (index < [_currentArr count]) {
                 
-                Model *model;
-                if (index == [_currentArr count] - 1) {
-                    model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsChecker:NO withIsPlus:NO withHasMoreModel:NO];
-                }
-                else
-                {
-                    model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsChecker:NO withIsPlus:NO withHasMoreModel:YES];
-                }
-                
-                    
+                Model *model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsChecker:NO withIsPlus:YES withHasMoreModel:YES];
                 [model addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
                 model.delegate = self;
                 [model setTitle:[_currentArr objectAtIndex:index] forState:UIControlStateNormal];
-           
-                 [self.view addSubview:model];
-/*****              
+                [self.view addSubview:model];
+
+/****               
                 model.minusBlock = ^(Model *aModel)
                 {
                     
                     if ([_currentArr count] > 1) {
                         
                         [aModel removeFromSuperview];
+                        [_addArr addObject:[_currentArr objectAtIndex:aModel.tag - 100]];
                         [_currentArr removeObjectAtIndex:aModel.tag - 100];
                         
                         [self revertToBack];
@@ -109,24 +130,24 @@
                     }
                     else
                     {
-                            
+                        
                         self.currentModel.isCheck = NO;
                         self.currentModel = aModel;
                         self.currentModel.isCheck = YES;
-
+                        
                     }
                     
                     _touchPoint = [gesture locationInView:gesture.view];
                     
-//                    移动model块的初始center
-//                    _startPoint = self.currentModel.center;
+                    //                    移动model块的初始center
+                    //                    _startPoint = self.currentModel.center;
                     
-                     
+                    
                     
                 };
                 model.changeBlock = ^(Model *aModel, UILongPressGestureRecognizer *gesture)
                 {
-                   
+                    
                     CGPoint newPoint = [gesture locationInView:gesture.view];
                     
                     CGFloat newX = newPoint.x - _touchPoint.x;
@@ -140,14 +161,14 @@
                     
                     [self locationChangeWithModel:aModel withEndPoint:endPoint];
                     
-                     
+                    
                 };
                 model.endBlock = ^(Model *aModel, UILongPressGestureRecognizer *gesture)
                 {
                     [UIView animateWithDuration:0.2 animations:^{
                         self.currentModel.transform = CGAffineTransformIdentity;
                     }];
-
+                    
                     
 //                    [self resetModelFrameWithModel:aModel];
                     [aModel resetModelFrame];
@@ -158,9 +179,9 @@
                 {
                     
                 };
- ***/  
+ ***/ 
                 
-               
+                
                 
                 
                 
@@ -203,11 +224,11 @@
         
         //从后往前移动模块
         if (aModel.tag > destinationModel.tag) {
-            
+//            这句话跟下面那句话，要思考下为什么这么写，
             for (NSInteger i = aModel.tag - 1; i > destinationModel.tag - 1; i -- ) {
                 Model *obj = (Model *)[self.view viewWithTag:i];
                 obj.tag += 1;
-//                [self resetModelFrameWithModel:obj];
+                
                 [obj resetModelFrame];
                 
             }
@@ -221,7 +242,7 @@
             for (NSInteger i = aModel.tag + 1; i < destinationModel.tag + 1; i ++ ) {
                 Model *obj = (Model *)[self.view viewWithTag:i];
                 obj.tag -= 1;
-//                [self resetModelFrameWithModel:obj];
+                //                [self resetModelFrameWithModel:obj];
                 [obj resetModelFrame];
                 
             }
@@ -232,75 +253,14 @@
         
     }
 }
+
 - (void)modelClick:(Model *)aModel
 {
-    if (self.currentModel) {
-        [self revertToBack];
-    }
-    
-    if (aModel.tag == [_currentArr count] + 99) {
-        SecondViewController * vc = [[SecondViewController alloc] init];
-        vc.popBlock = ^(NSArray *arr)
-        {
-            
-            if (arr && [arr count] >= 1) {
-                Model *model = (Model *)[self.view viewWithTag:99 + [_currentArr count]];
-                
-                model.tag = 99 +  [_currentArr count] + [arr count];
-                [model resetModelFrame];
-                
-                
-                for (NSInteger i = [_currentArr count] + 100; i < [_currentArr count] + [arr count] + 100; i ++) {
-                    Model *aModel = [[Model alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) withTag:i - 1 withIsChecker:NO withIsPlus:NO withHasMoreModel:YES];
-                    [aModel addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
-                    aModel.delegate = self;
-                    [aModel setTitle:[arr objectAtIndex:i - [_currentArr count] - 100]forState:UIControlStateNormal];
-                    [aModel setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-                    [self.view addSubview:aModel];
-                    [aModel resetModelFrame];
-                }
-                [_currentArr addObjectsFromArray:arr];
-            }
-           
-            
-        };
-        [self.navigationController showViewController:vc sender:nil];
-    }
     
 }
 
-
-#pragma mark - ModelDelegate
-- (void)deleteWith:(Model *)aModel
-{
-    
-    if ([_currentArr count] > 1) {
-        
-        [aModel removeFromSuperview];
-        [_currentArr removeObjectAtIndex:aModel.tag - 100];
-        
-        [self revertToBack];
-        
-        for (NSInteger i = aModel.tag; i < 101 + [_currentArr count]; i ++) {
-            Model * obj = (Model *)[self.view viewWithTag:i];
-            obj.tag --;
-            
-            [obj resetModelFrame];
-        }
-    }
-    
-    
-    
-    
-    
-    
-}
 - (void)longPressBeginWith:(Model *)aModel withGesture:(UILongPressGestureRecognizer *)aGesture
 {
-    
-    if (aModel.tag == [_currentArr count] + 99) {
-        return ;
-    }
     
     if (self.currentModel == aModel) {
         
@@ -316,7 +276,6 @@
     }
     
     _touchPoint = [aGesture locationInView:aGesture.view];
-    
     
     
     
@@ -346,18 +305,25 @@
         self.currentModel.transform = CGAffineTransformIdentity;
     }];
     
-
     [aModel resetModelFrame];
     
     
 }
 
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

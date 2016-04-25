@@ -5,6 +5,17 @@
 //  Created by FOODING on 16/4/22.
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
+/******
+ -------------------------------------------------------------------------------
+ 要点：1，找一个特定的值来确定btn位置，这里面找的是btn的tag值，可以自定义
+      2，先做基本功能，删除之后位置自动移动
+      3，移动的时候，先做移动状态end时，位置确定，（两部分，往后移，往前移）在进行change状态
+      4，整理优化（最开始考虑block，后来发现，第二个页面pop时也是要进行block，还是选择了delegate）
+ 
+ 
+ 
+ -------------------------------------------------------------------------------
+ *****/
 
 #import "AppDelegate.h"
 
@@ -17,6 +28,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    
     return YES;
 }
 
