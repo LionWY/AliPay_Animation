@@ -42,9 +42,8 @@
 
 - (id)initWithFrame:(CGRect)frame 
             withTag:(NSInteger)aTag 
-      withIsChecker:(BOOL)isCheck
          withIsPlus:(BOOL)isPlus
-   withHasMoreModel:(BOOL)isHas;
+    withIsMoreModel:(BOOL)isMore;
 
 - (void)setIsCheck:(BOOL)isCheck;
 - (BOOL)isCheck;

@@ -16,9 +16,8 @@
 
 - (id)initWithFrame:(CGRect)frame 
             withTag:(NSInteger)aTag 
-      withIsChecker:(BOOL)isCheck
          withIsPlus:(BOOL)isPlus
-   withHasMoreModel:(BOOL)isHas
+    withIsMoreModel:(BOOL)isMore
 
 {
     if (self = [super initWithFrame:frame]) {
@@ -36,12 +35,12 @@
         [self setBackgroundImage:[UIImage imageNamed:@"app_item_pressed_bg"] forState:UIControlStateSelected];
         
         
-        _isCheck = isCheck;
+        
         self.tag = aTag;
         
         
         
-        if (isHas) {
+        if (!isMore) {
             _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             _deleteBtn.frame = CGRectMake(frame.size.width - 16, 2, 16, 16);
             [_deleteBtn setBackgroundImage:[UIImage imageNamed:@"app_item_plus"] forState:UIControlStateNormal];

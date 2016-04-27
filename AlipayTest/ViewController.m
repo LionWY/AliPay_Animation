@@ -35,6 +35,18 @@
     
 }
 
+- (void)loadModelWithIsMore:(BOOL)flag WithIndex:(NSInteger)aIndex withTitle:(NSString *)aTitle
+{
+    Model *model = [[Model alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) withTag:aIndex withIsPlus:NO withIsMoreModel:flag];
+    [model addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
+    model.delegate = self;
+    [model setTitle:aTitle forState:UIControlStateNormal];
+    
+    [self.view addSubview:model];
+    
+    [model resetModelFrame];
+}
+
 /**
  *  回复原状
  */
@@ -56,21 +68,19 @@
             
             if (index < [_currentArr count]) {
                 
-                Model *model;
+//                Model *model;
                 if (index == [_currentArr count] - 1) {
-                    model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsChecker:NO withIsPlus:NO withHasMoreModel:NO];
+                    
+                    [self loadModelWithIsMore:YES WithIndex:100 + index withTitle:[_currentArr objectAtIndex:index]];
+                    
                 }
                 else
                 {
-                    model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsChecker:NO withIsPlus:NO withHasMoreModel:YES];
+                    
+                    [self loadModelWithIsMore:NO WithIndex:100 + index withTitle:[_currentArr objectAtIndex:index]];
+                    
                 }
                 
-                    
-                [model addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
-                model.delegate = self;
-                [model setTitle:[_currentArr objectAtIndex:index] forState:UIControlStateNormal];
-           
-                 [self.view addSubview:model];
 /*****              
                 model.minusBlock = ^(Model *aModel)
                 {
@@ -251,13 +261,17 @@
                 
                 
                 for (NSInteger i = [_currentArr count] + 100; i < [_currentArr count] + [arr count] + 100; i ++) {
-                    Model *aModel = [[Model alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) withTag:i - 1 withIsChecker:NO withIsPlus:NO withHasMoreModel:YES];
-                    [aModel addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
-                    aModel.delegate = self;
-                    [aModel setTitle:[arr objectAtIndex:i - [_currentArr count] - 100]forState:UIControlStateNormal];
-                    [aModel setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-                    [self.view addSubview:aModel];
-                    [aModel resetModelFrame];
+                    
+                    [self loadModelWithIsMore:NO WithIndex:i - 1 withTitle:[arr objectAtIndex:i - [_currentArr count] - 100]];
+                    
+                    
+//                    Model *aModel = [[Model alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) withTag:i - 1 withIsChecker:NO withIsPlus:NO withIsMoreModel:NO];
+//                    [aModel addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
+//                    aModel.delegate = self;
+//                    [aModel setTitle:[arr objectAtIndex:i - [_currentArr count] - 100]forState:UIControlStateNormal];
+//                    [aModel setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+//                    [self.view addSubview:aModel];
+//                    [aModel resetModelFrame];
                 }
                 [_currentArr addObjectsFromArray:arr];
             }
@@ -281,6 +295,7 @@
         
         [self revertToBack];
         
+//        只对需要改变位置的model进行操作
         for (NSInteger i = aModel.tag; i < 101 + [_currentArr count]; i ++) {
             Model * obj = (Model *)[self.view viewWithTag:i];
             obj.tag --;

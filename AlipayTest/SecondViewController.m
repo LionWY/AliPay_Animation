@@ -85,7 +85,7 @@
             
             if (index < [_currentArr count]) {
                 
-                Model *model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsChecker:NO withIsPlus:YES withHasMoreModel:YES];
+                Model *model = [[Model alloc] initWithFrame:CGRectMake(j * WIDTH, (i + 3) * HEIGHT, WIDTH, HEIGHT) withTag:100 + index withIsPlus:YES withIsMoreModel:NO];
                 [model addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
                 model.delegate = self;
                 [model setTitle:[_currentArr objectAtIndex:index] forState:UIControlStateNormal];
@@ -201,7 +201,7 @@
     
     Model *destinationModel = nil;
     
-    for (NSInteger i = 100; i < 99 + [_currentArr count]; i ++) {
+    for (NSInteger i = 100; i < 100 + [_currentArr count]; i ++) {
         
         Model *obj = (Model *)[self.view viewWithTag:i];
         
