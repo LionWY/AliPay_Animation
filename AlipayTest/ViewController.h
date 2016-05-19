@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Model.h"
+#import "AliView.h"
+#import "Config.h"
 
-@interface ViewController : UIViewController<ModelDelegate>
+@interface ViewController : UIViewController
+{
+    
+}
+
+@property (nonatomic, strong) AliView *aliView;
 
 
 
-@property (nonatomic, strong) NSMutableArray *currentArr;
+
 
 @end
 

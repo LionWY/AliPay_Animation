@@ -12,6 +12,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+//存储当前显示的数组和显示不下的数组
+@property (nonatomic, strong) NSMutableArray *currentArray;
+@property (nonatomic, strong) NSMutableArray *lastArray;
+@property (nonatomic, strong) NSMutableArray *addArray;
+
 
 @end
 
