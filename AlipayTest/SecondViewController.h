@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface SecondViewController : UIViewController
 
-
 @property (nonatomic, strong) NSMutableArray *addArr;
-@property (nonatomic, copy) void (^ popBlock)(NSArray *arr);
+@property (nonatomic, copy) void (^popBlock)(NSArray *arr);
 
 @end

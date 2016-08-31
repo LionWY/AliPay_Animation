@@ -6,17 +6,13 @@
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 #import "SecondViewController.h"
 
-@interface ViewController ()
-{
-    
+@interface ViewController () {
 }
-
-
 
 @end
 
@@ -24,44 +20,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     AppDelegate *app = KAPPDELEGATE;
-    
-     
+
     __weak ViewController *weakSelf = self;
-    
-    _aliView = [[AliView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT - 200) withHasMore:YES];
-    
+
+    _aliView = [[AliView alloc]
+        initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT - 200)
+          withHasMore:YES];
+
     [_aliView loadBtnArrWithArr:app.currentArray];
-    
-    
-    
-    _aliView.moreBlock = ^
-    {
+
+    _aliView.moreBlock = ^{
         SecondViewController *secondVC = [[SecondViewController alloc] init];
-        
+
         [weakSelf.navigationController showViewController:secondVC sender:nil];
-        
-        secondVC.popBlock = ^(NSArray *arr)
-        {
+
+        secondVC.popBlock = ^(NSArray *arr) {
             [weakSelf.aliView reloadBtnArrWithArr:arr];
-            
+
         };
-        
+
     };
-    
-    _aliView.clickBlock = ^(Model *aModel)
-    {
+
+    _aliView.clickBlock = ^(Model *aModel) {
         NSLog(@"当前点击的是%@", aModel.title);
     };
-    
+
     [self.view addSubview:_aliView];
-    
-    
-    
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -6,20 +6,13 @@
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "AliView.h"
 #import "Config.h"
+#import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-{
-    
+@interface ViewController : UIViewController {
 }
 
 @property (nonatomic, strong) AliView *aliView;
 
-
-
-
-
 @end
-

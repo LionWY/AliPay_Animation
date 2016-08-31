@@ -6,33 +6,19 @@
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Config.h"
+#import <UIKit/UIKit.h>
 
-#define WIDTH       SCREEN_WIDTH / 4
+#define WIDTH SCREEN_WIDTH / 4
 
-#define HEIGHT      80
-
-
-
-
-
-
-
-
+#define HEIGHT 80
 
 @class Model;
 
-
-
-
-@interface Model : UIButton
-{
+@interface Model : UIButton {
     BOOL _isCheck;
     UIImageView *_imgView;
 }
-
-
 
 @property (nonatomic, weak) id delegate;
 
@@ -40,10 +26,8 @@
 
 @property (nonatomic, strong) UIButton *handleBtn;
 
-
-
-- (id)initWithFrame:(CGRect)frame 
-            withTag:(NSInteger)aTag 
+- (id)initWithFrame:(CGRect)frame
+            withTag:(NSInteger)aTag
          withIsPlus:(BOOL)isPlus
          withIsMore:(BOOL)isMore;
 
@@ -53,20 +37,17 @@
 
 - (void)resetModelFrame;
 
-
 @end
-
-
 
 @protocol ModelDelegate <NSObject>
 
 - (void)deleteWith:(Model *)aModel;
 - (void)plusWith:(Model *)aModel;
-- (void)longPressBeginWith:(Model *)aModel withGesture:(UILongPressGestureRecognizer *)aGesture;
-- (void)longPressChangeWith:(Model *)aModel withGesture:(UILongPressGestureRecognizer *)aGesture;
-- (void)longPressEndWith:(Model *)aModel withGesture:(UILongPressGestureRecognizer *)aGesture;
-
+- (void)longPressBeginWith:(Model *)aModel
+               withGesture:(UILongPressGestureRecognizer *)aGesture;
+- (void)longPressChangeWith:(Model *)aModel
+                withGesture:(UILongPressGestureRecognizer *)aGesture;
+- (void)longPressEndWith:(Model *)aModel
+             withGesture:(UILongPressGestureRecognizer *)aGesture;
 
 @end
-
-

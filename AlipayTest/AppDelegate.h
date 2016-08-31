@@ -17,6 +17,4 @@
 @property (nonatomic, strong) NSMutableArray *lastArray;
 @property (nonatomic, strong) NSMutableArray *addArray;
 
-
 @end
-

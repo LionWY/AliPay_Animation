@@ -6,60 +6,54 @@
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
 
-#import "SecondViewController.h"
 #import "AliView.h"
 #import "AppDelegate.h"
+#import "SecondViewController.h"
 
-@interface SecondViewController ()
-{
+@interface SecondViewController () {
     AliView *_aliView;
 }
-
-
 
 @end
 
 @implementation SecondViewController
 
-- (void)pop
-{
+- (void)pop {
     AppDelegate *app = KAPPDELEGATE;
     if (self.popBlock) {
         self.popBlock(app.addArray);
     }
-    
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(pop)];
+
+    UIBarButtonItem *left =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind
+                                                      target:self
+                                                      action:@selector(pop)];
     [self.navigationItem setLeftBarButtonItem:left];
-    
 
     self.addArr = [[NSMutableArray alloc] init];
-    
+
     [self.view setBackgroundColor:[UIColor lightGrayColor]];
-    
+
     AppDelegate *app = KAPPDELEGATE;
-    
-    
-    
-    _aliView = [[AliView alloc] initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT - 200) withHasMore:NO];
-    
+
+    _aliView = [[AliView alloc]
+        initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_HEIGHT - 200)
+          withHasMore:NO];
+
     [_aliView loadBtnArrWithArr:app.lastArray];
-    
-    
-    _aliView.clickBlock = ^(Model *aModel)
-    {
+
+    _aliView.clickBlock = ^(Model *aModel) {
         NSLog(@"当前点击的是%@", aModel.title);
     };
-    
-    
-    [self.view addSubview:_aliView];
 
+    [self.view addSubview:_aliView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +64,8 @@
 /*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// In a storyboard-based application, you will often want to do a little preparation
+before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

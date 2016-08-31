@@ -6,17 +6,14 @@
 //  Copyright © 2016年 FOODING. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Model.h"
+#import <UIKit/UIKit.h>
 
+typedef void (^MoreBlock)();
 
-typedef void(^MoreBlock)();
+typedef void (^ModelClick)(Model *aModel);
 
-typedef void(^ModelClick)(Model *aModel);
-
-
-@interface AliView : UIView<ModelDelegate>
-
+@interface AliView : UIView <ModelDelegate>
 
 @property (nonatomic, strong) NSMutableArray *currentArr;
 @property (nonatomic, assign) BOOL hasMore;
@@ -24,10 +21,8 @@ typedef void(^ModelClick)(Model *aModel);
 
 @property (nonatomic, copy) ModelClick clickBlock;
 
-
-- (id)initWithFrame:(CGRect)frame withHasMore:(BOOL)hasMore ;
+- (id)initWithFrame:(CGRect)frame withHasMore:(BOOL)hasMore;
 - (void)loadBtnArrWithArr:(NSMutableArray *)aArr;
 - (void)reloadBtnArrWithArr:(NSArray *)aArr;
-
 
 @end
