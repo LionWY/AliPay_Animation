@@ -70,28 +70,44 @@
 - (void)loadBtnArrWithArr:(NSMutableArray *)aArr {
     //    浅拷贝，
     _currentArr = aArr;
-
-    for (NSInteger i = 0; i < 3; i++) {
-        for (NSInteger j = 0; j < 4; j++) {
-            NSInteger index = j + i * 4;
-
-            if (index < [_currentArr count] + 1) {
-
-                if (index == [_currentArr count] && self.hasMore) {
-
-                    [self loadModelWithIndex:100 + index
-                                   withTitle:@"More"
-                                  withIsMore:YES];
-                } else {
-                    if (index < [_currentArr count]) {
+    
+    //第一页，有更多的按钮
+    if (self.hasMore) {
+        
+        for (NSInteger i = 0; i < 3; i++) {
+            for (NSInteger j = 0; j < 4; j++) {
+                NSInteger index = j + i * 4;
+                
+                if (index < [_currentArr count] + 1) {
+                    
+                    if (index == [_currentArr count]) {
+                        
+                        [self loadModelWithIndex:100 + index
+                                       withTitle:@"More"
+                                      withIsMore:YES];
+                    } else {
+                        
                         [self loadModelWithIndex:100 + index
                                        withTitle:[_currentArr objectAtIndex:index]
                                       withIsMore:NO];
+                        
                     }
                 }
             }
         }
+        
     }
+    else
+    {
+        for (NSInteger index = 0; index < [_currentArr count]; index++) {
+            [self loadModelWithIndex:100 + index withTitle:[_currentArr objectAtIndex:index] withIsMore:NO];
+        }
+    }
+    
+    
+    
+
+
 }
 
 /**
