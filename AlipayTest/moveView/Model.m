@@ -9,7 +9,38 @@
 #import "Config.h"
 #import "Model.h"
 
+@interface Model () {
+
+
+    struct {
+        unsigned int didDelete              : 1;
+        
+        unsigned int didPlus                : 1;
+        
+        unsigned int didPressBegin          : 1;
+        
+        unsigned int didPressChange         : 1;
+        
+        unsigned int didPressEnd            : 1;
+        
+        
+    } _delegateFlags;
+}
+
+@end
+
 @implementation Model
+
+- (void)setDelegate:(id)delegate
+{
+    _delegate = delegate;
+    
+    _delegateFlags.didDelete = [_delegate respondsToSelector:@selector(deleteWith:)];
+    _delegateFlags.didPlus = [_delegate respondsToSelector:@selector(plusWith:)];
+    _delegateFlags.didPressBegin = [_delegate respondsToSelector:@selector(longPressBeginWith:withGesture:)];
+    _delegateFlags.didPressChange = [_delegate respondsToSelector:@selector(longPressChangeWith:withGesture:)];
+    _delegateFlags.didPressEnd = [_delegate respondsToSelector:@selector(longPressEndWith:withGesture:)];
+}
 
 - (id)initWithFrame:(CGRect)frame
             withTag:(NSInteger)aTag
@@ -70,14 +101,14 @@
 }
 
 - (void)plusBtnClick {
-    if ([self.delegate respondsToSelector:@selector(plusWith:)]) {
+    if (_delegateFlags.didPlus) {
         [self.delegate plusWith:self];
     }
 }
 
 - (void)minusBtnClick {
 
-    if ([self.delegate respondsToSelector:@selector(deleteWith:)]) {
+    if (_delegateFlags.didDelete) {
         [self.delegate deleteWith:self];
     }
 }
@@ -86,23 +117,20 @@
 
     switch (aLongPress.state) {
         case UIGestureRecognizerStateBegan: {
-            if ([self.delegate
-                    respondsToSelector:@selector(longPressBeginWith:withGesture:)]) {
+            if (_delegateFlags.didPressBegin) {
                 [self.delegate longPressBeginWith:self withGesture:aLongPress];
             }
 
         } break;
         case UIGestureRecognizerStateChanged: {
 
-            if ([self.delegate
-                    respondsToSelector:@selector(longPressChangeWith:withGesture:)]) {
+            if (_delegateFlags.didPressChange) {
                 [self.delegate longPressChangeWith:self withGesture:aLongPress];
             }
         } break;
         case UIGestureRecognizerStateEnded: {
 
-            if ([self.delegate
-                    respondsToSelector:@selector(longPressEndWith:withGesture:)]) {
+            if (_delegateFlags.didPressEnd) {
                 [self.delegate longPressEndWith:self withGesture:aLongPress];
             }
         }

@@ -147,6 +147,7 @@
 				TargetAttributes = {
 					661DC7051CC9D6D300CA797D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 86ZKR6M3Y3;
 					};
 				};
 			};
@@ -309,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 86ZKR6M3Y3;
 				INFOPLIST_FILE = AlipayTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FOODING.AlipayTest;
@@ -320,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 86ZKR6M3Y3;
 				INFOPLIST_FILE = AlipayTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FOODING.AlipayTest;
