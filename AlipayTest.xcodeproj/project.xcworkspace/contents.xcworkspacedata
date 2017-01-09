@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AlipaySwift.xcodeproj">
+      location = "self:AlipayTest.xcodeproj">
    </FileRef>
 </Workspace>
