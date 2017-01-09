@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "661DC7051CC9D6D300CA797D"
-               BuildableName = "AlipayTest.app"
-               BlueprintName = "AlipayTest"
-               ReferencedContainer = "container:AlipayTest.xcodeproj">
+               BlueprintIdentifier = "66F391581E1C9F8100ACE768"
+               BuildableName = "AlipaySwift.app"
+               BlueprintName = "AlipaySwift"
+               ReferencedContainer = "container:AlipaySwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "661DC7051CC9D6D300CA797D"
-            BuildableName = "AlipayTest.app"
-            BlueprintName = "AlipayTest"
-            ReferencedContainer = "container:AlipayTest.xcodeproj">
+            BlueprintIdentifier = "66F391581E1C9F8100ACE768"
+            BuildableName = "AlipaySwift.app"
+            BlueprintName = "AlipaySwift"
+            ReferencedContainer = "container:AlipaySwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "661DC7051CC9D6D300CA797D"
-            BuildableName = "AlipayTest.app"
-            BlueprintName = "AlipayTest"
-            ReferencedContainer = "container:AlipayTest.xcodeproj">
+            BlueprintIdentifier = "66F391581E1C9F8100ACE768"
+            BuildableName = "AlipaySwift.app"
+            BlueprintName = "AlipaySwift"
+            ReferencedContainer = "container:AlipaySwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "661DC7051CC9D6D300CA797D"
-            BuildableName = "AlipayTest.app"
-            BlueprintName = "AlipayTest"
-            ReferencedContainer = "container:AlipayTest.xcodeproj">
+            BlueprintIdentifier = "66F391581E1C9F8100ACE768"
+            BuildableName = "AlipaySwift.app"
+            BlueprintName = "AlipaySwift"
+            ReferencedContainer = "container:AlipaySwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
