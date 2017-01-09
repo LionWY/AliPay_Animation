@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		668D77361E1CD04D00182010 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D77351E1CD04D00182010 /* ModelProtocol.swift */; };
+		66F3915D1E1C9F8100ACE768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3915C1E1C9F8100ACE768 /* AppDelegate.swift */; };
+		66F3915F1E1C9F8100ACE768 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3915E1E1C9F8100ACE768 /* ViewController.swift */; };
+		66F391621E1C9F8100ACE768 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F391601E1C9F8100ACE768 /* Main.storyboard */; };
+		66F391641E1C9F8100ACE768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F391631E1C9F8100ACE768 /* Assets.xcassets */; };
+		66F391671E1C9F8100ACE768 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F391651E1C9F8100ACE768 /* LaunchScreen.storyboard */; };
+		66F3916F1E1C9FFD00ACE768 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3916E1E1C9FFD00ACE768 /* NextViewController.swift */; };
+		66F391711E1CA17500ACE768 /* AliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F391701E1CA17500ACE768 /* AliView.swift */; };
+		66F391731E1CA18100ACE768 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F391721E1CA18100ACE768 /* Model.swift */; };
+		66F391781E1CA6DC00ACE768 /* app_item_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391741E1CA6DC00ACE768 /* app_item_plus.png */; };
+		66F391791E1CA6DC00ACE768 /* app_item_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391751E1CA6DC00ACE768 /* app_item_bg.png */; };
+		66F3917A1E1CA6DC00ACE768 /* app_item_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391761E1CA6DC00ACE768 /* app_item_minus.png */; };
+		66F3917B1E1CA6DC00ACE768 /* app_item_pressed_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391771E1CA6DC00ACE768 /* app_item_pressed_bg.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		668D77351E1CD04D00182010 /* ModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		66F391591E1C9F8100ACE768 /* AlipaySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlipaySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66F3915C1E1C9F8100ACE768 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		66F3915E1E1C9F8100ACE768 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		66F391611E1C9F8100ACE768 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		66F391631E1C9F8100ACE768 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66F391661E1C9F8100ACE768 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66F391681E1C9F8100ACE768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66F3916E1E1C9FFD00ACE768 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		66F391701E1CA17500ACE768 /* AliView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliView.swift; sourceTree = "<group>"; };
+		66F391721E1CA18100ACE768 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		66F391741E1CA6DC00ACE768 /* app_item_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_plus.png; sourceTree = "<group>"; };
+		66F391751E1CA6DC00ACE768 /* app_item_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_bg.png; sourceTree = "<group>"; };
+		66F391761E1CA6DC00ACE768 /* app_item_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_minus.png; sourceTree = "<group>"; };
+		66F391771E1CA6DC00ACE768 /* app_item_pressed_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_pressed_bg.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66F391561E1C9F8100ACE768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66F391501E1C9F8100ACE768 = {
+			isa = PBXGroup;
+			children = (
+				66F3915B1E1C9F8100ACE768 /* AlipaySwift */,
+				66F3915A1E1C9F8100ACE768 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66F3915A1E1C9F8100ACE768 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66F391591E1C9F8100ACE768 /* AlipaySwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66F3915B1E1C9F8100ACE768 /* AlipaySwift */ = {
+			isa = PBXGroup;
+			children = (
+				66F391741E1CA6DC00ACE768 /* app_item_plus.png */,
+				66F391751E1CA6DC00ACE768 /* app_item_bg.png */,
+				66F391761E1CA6DC00ACE768 /* app_item_minus.png */,
+				66F391771E1CA6DC00ACE768 /* app_item_pressed_bg.png */,
+				66F3915C1E1C9F8100ACE768 /* AppDelegate.swift */,
+				66F3915E1E1C9F8100ACE768 /* ViewController.swift */,
+				66F3916E1E1C9FFD00ACE768 /* NextViewController.swift */,
+				66F391701E1CA17500ACE768 /* AliView.swift */,
+				66F391721E1CA18100ACE768 /* Model.swift */,
+				668D77351E1CD04D00182010 /* ModelProtocol.swift */,
+				66F391601E1C9F8100ACE768 /* Main.storyboard */,
+				66F391631E1C9F8100ACE768 /* Assets.xcassets */,
+				66F391651E1C9F8100ACE768 /* LaunchScreen.storyboard */,
+				66F391681E1C9F8100ACE768 /* Info.plist */,
+			);
+			path = AlipaySwift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66F391581E1C9F8100ACE768 /* AlipaySwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66F3916B1E1C9F8100ACE768 /* Build configuration list for PBXNativeTarget "AlipaySwift" */;
+			buildPhases = (
+				66F391551E1C9F8100ACE768 /* Sources */,
+				66F391561E1C9F8100ACE768 /* Frameworks */,
+				66F391571E1C9F8100ACE768 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlipaySwift;
+			productName = AlipaySwift;
+			productReference = 66F391591E1C9F8100ACE768 /* AlipaySwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66F391511E1C9F8100ACE768 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Noohle;
+				TargetAttributes = {
+					66F391581E1C9F8100ACE768 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 66F391541E1C9F8100ACE768 /* Build configuration list for PBXProject "AlipaySwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66F391501E1C9F8100ACE768;
+			productRefGroup = 66F3915A1E1C9F8100ACE768 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66F391581E1C9F8100ACE768 /* AlipaySwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66F391571E1C9F8100ACE768 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F3917A1E1CA6DC00ACE768 /* app_item_minus.png in Resources */,
+				66F391671E1C9F8100ACE768 /* LaunchScreen.storyboard in Resources */,
+				66F391641E1C9F8100ACE768 /* Assets.xcassets in Resources */,
+				66F391791E1CA6DC00ACE768 /* app_item_bg.png in Resources */,
+				66F3917B1E1CA6DC00ACE768 /* app_item_pressed_bg.png in Resources */,
+				66F391781E1CA6DC00ACE768 /* app_item_plus.png in Resources */,
+				66F391621E1C9F8100ACE768 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66F391551E1C9F8100ACE768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F391731E1CA18100ACE768 /* Model.swift in Sources */,
+				668D77361E1CD04D00182010 /* ModelProtocol.swift in Sources */,
+				66F3915F1E1C9F8100ACE768 /* ViewController.swift in Sources */,
+				66F391711E1CA17500ACE768 /* AliView.swift in Sources */,
+				66F3916F1E1C9FFD00ACE768 /* NextViewController.swift in Sources */,
+				66F3915D1E1C9F8100ACE768 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		66F391601E1C9F8100ACE768 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66F391611E1C9F8100ACE768 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		66F391651E1C9F8100ACE768 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66F391661E1C9F8100ACE768 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66F391691E1C9F8100ACE768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66F3916A1E1C9F8100ACE768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66F3916C1E1C9F8100ACE768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AlipaySwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lion.AlipaySwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		66F3916D1E1C9F8100ACE768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AlipaySwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lion.AlipaySwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66F391541E1C9F8100ACE768 /* Build configuration list for PBXProject "AlipaySwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F391691E1C9F8100ACE768 /* Debug */,
+				66F3916A1E1C9F8100ACE768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66F3916B1E1C9F8100ACE768 /* Build configuration list for PBXNativeTarget "AlipaySwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66F3916C1E1C9F8100ACE768 /* Debug */,
+				66F3916D1E1C9F8100ACE768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66F391511E1C9F8100ACE768 /* Project object */;
+}
