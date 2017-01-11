@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     
     var aliview = AliView() 
     
-    let app = UIApplication.shared.delegate as! AppDelegate
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +29,7 @@ class ViewController: UIViewController {
         aliview = AliView.init(frame: CGRect(x: 0, y: 100, width: width * 4, height: height * 3), hasMore: true)
         
         aliview.backgroundColor = UIColor.cyan
-        aliview.loadModels(arr: app.currentData)
+        aliview.loadModels(arr: Util.currentData)
         
         aliview.moreBlock = {
             self.goToNext()

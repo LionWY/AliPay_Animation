@@ -14,12 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    var currentData: Array<String> = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-    
-    var nextData: Array<String> = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
-    
-    var addData: [String] = []
-    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

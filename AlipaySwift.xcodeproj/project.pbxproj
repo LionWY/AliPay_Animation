@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		668D77361E1CD04D00182010 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D77351E1CD04D00182010 /* ModelProtocol.swift */; };
+		66A9A9F31E261F1F00F0100E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A9F21E261F1F00F0100E /* Utils.swift */; };
 		66F3915D1E1C9F8100ACE768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3915C1E1C9F8100ACE768 /* AppDelegate.swift */; };
 		66F3915F1E1C9F8100ACE768 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3915E1E1C9F8100ACE768 /* ViewController.swift */; };
 		66F391621E1C9F8100ACE768 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F391601E1C9F8100ACE768 /* Main.storyboard */; };
@@ -16,14 +17,11 @@
 		66F3916F1E1C9FFD00ACE768 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F3916E1E1C9FFD00ACE768 /* NextViewController.swift */; };
 		66F391711E1CA17500ACE768 /* AliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F391701E1CA17500ACE768 /* AliView.swift */; };
 		66F391731E1CA18100ACE768 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F391721E1CA18100ACE768 /* Model.swift */; };
-		66F391781E1CA6DC00ACE768 /* app_item_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391741E1CA6DC00ACE768 /* app_item_plus.png */; };
-		66F391791E1CA6DC00ACE768 /* app_item_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391751E1CA6DC00ACE768 /* app_item_bg.png */; };
-		66F3917A1E1CA6DC00ACE768 /* app_item_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391761E1CA6DC00ACE768 /* app_item_minus.png */; };
-		66F3917B1E1CA6DC00ACE768 /* app_item_pressed_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F391771E1CA6DC00ACE768 /* app_item_pressed_bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		668D77351E1CD04D00182010 /* ModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		66A9A9F21E261F1F00F0100E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		66F391591E1C9F8100ACE768 /* AlipaySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlipaySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F3915C1E1C9F8100ACE768 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66F3915E1E1C9F8100ACE768 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,10 +32,6 @@
 		66F3916E1E1C9FFD00ACE768 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		66F391701E1CA17500ACE768 /* AliView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliView.swift; sourceTree = "<group>"; };
 		66F391721E1CA18100ACE768 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		66F391741E1CA6DC00ACE768 /* app_item_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_plus.png; sourceTree = "<group>"; };
-		66F391751E1CA6DC00ACE768 /* app_item_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_bg.png; sourceTree = "<group>"; };
-		66F391761E1CA6DC00ACE768 /* app_item_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_minus.png; sourceTree = "<group>"; };
-		66F391771E1CA6DC00ACE768 /* app_item_pressed_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_item_pressed_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,16 +64,13 @@
 		66F3915B1E1C9F8100ACE768 /* AlipaySwift */ = {
 			isa = PBXGroup;
 			children = (
-				66F391741E1CA6DC00ACE768 /* app_item_plus.png */,
-				66F391751E1CA6DC00ACE768 /* app_item_bg.png */,
-				66F391761E1CA6DC00ACE768 /* app_item_minus.png */,
-				66F391771E1CA6DC00ACE768 /* app_item_pressed_bg.png */,
 				66F3915C1E1C9F8100ACE768 /* AppDelegate.swift */,
 				66F3915E1E1C9F8100ACE768 /* ViewController.swift */,
 				66F3916E1E1C9FFD00ACE768 /* NextViewController.swift */,
 				66F391701E1CA17500ACE768 /* AliView.swift */,
 				66F391721E1CA18100ACE768 /* Model.swift */,
 				668D77351E1CD04D00182010 /* ModelProtocol.swift */,
+				66A9A9F21E261F1F00F0100E /* Utils.swift */,
 				66F391601E1C9F8100ACE768 /* Main.storyboard */,
 				66F391631E1C9F8100ACE768 /* Assets.xcassets */,
 				66F391651E1C9F8100ACE768 /* LaunchScreen.storyboard */,
@@ -147,12 +138,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F3917A1E1CA6DC00ACE768 /* app_item_minus.png in Resources */,
 				66F391671E1C9F8100ACE768 /* LaunchScreen.storyboard in Resources */,
 				66F391641E1C9F8100ACE768 /* Assets.xcassets in Resources */,
-				66F391791E1CA6DC00ACE768 /* app_item_bg.png in Resources */,
-				66F3917B1E1CA6DC00ACE768 /* app_item_pressed_bg.png in Resources */,
-				66F391781E1CA6DC00ACE768 /* app_item_plus.png in Resources */,
 				66F391621E1C9F8100ACE768 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +154,7 @@
 				66F391731E1CA18100ACE768 /* Model.swift in Sources */,
 				668D77361E1CD04D00182010 /* ModelProtocol.swift in Sources */,
 				66F3915F1E1C9F8100ACE768 /* ViewController.swift in Sources */,
+				66A9A9F31E261F1F00F0100E /* Utils.swift in Sources */,
 				66F391711E1CA17500ACE768 /* AliView.swift in Sources */,
 				66F3916F1E1C9FFD00ACE768 /* NextViewController.swift in Sources */,
 				66F3915D1E1C9F8100ACE768 /* AppDelegate.swift in Sources */,

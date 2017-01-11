@@ -18,7 +18,7 @@ class NextViewController: UIViewController {
     
     var popBlock: backBlock?
     
-    let app = UIApplication.shared.delegate as! AppDelegate
+    
     
     
     
@@ -26,8 +26,8 @@ class NextViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         
         
-        if self.app.addData.count > 0 {
-            self.popBlock!(self.app.addData)
+        if Util.addData.count > 0 {
+            self.popBlock!(Util.addData)
         }
         
         
@@ -38,18 +38,18 @@ class NextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.app.addData = []
+        Util.addData = []
 
         // Do any additional setup after loading the view.
         
-        let app = UIApplication.shared.delegate as! AppDelegate
+        
         
         let aliview = AliView.init(frame: CGRect(x: 0, y: 100, width: width * 4, height: height * 3), hasMore: false)
         
         aliview.backgroundColor = UIColor.cyan
         
         
-        aliview.loadModels(arr: app.nextData)
+        aliview.loadModels(arr: Util.nextData)
         
         
         aliview.modelBlock = {

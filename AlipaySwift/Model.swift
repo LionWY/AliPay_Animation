@@ -9,6 +9,25 @@
 import UIKit
 
 
+extension UIImage {
+    
+    
+    
+    static func bundlePath(_ name: String) -> UIImage {
+        let bundlePath = Bundle.main.path(forResource: "My", ofType: "bundle")
+        
+        let bundle = Bundle(path: bundlePath!)
+        
+        let imgPath = bundle?.path(forResource: name, ofType: "png")
+        
+        return  UIImage(contentsOfFile: imgPath!)!    
+        
+    }
+}
+
+
+
+
 class Model: UIButton {
     
     let width = Int(UIScreen.main.bounds.size.width / 4)
@@ -63,19 +82,19 @@ class Model: UIButton {
         
         self.layer.masksToBounds = true
         
-        self.setBackgroundImage(UIImage(named: "app_item_bg"), for: .normal)
-        self.setBackgroundImage(UIImage(named: "app_item_pressed_bg"), for: .selected)
+        self.setBackgroundImage(UIImage.bundlePath("app_item_bg"), for: .normal)
+        self.setBackgroundImage(UIImage.bundlePath("app_item_pressed_bg"), for: .selected)
         self.setTitleColor(UIColor.darkGray, for: .normal)
         
         if !isMore  {
             handleBtn = UIButton(type: .custom)
             handleBtn.frame = CGRect(x: frame.size.width - 16, y: 2, width: 16, height: 16)
             
-            handleBtn.setBackgroundImage(UIImage(named: "app_item_minus"), for: .normal)
+            handleBtn.setBackgroundImage(UIImage.bundlePath("app_item_minus"), for: .normal)
             
             if isNextPage {
                 
-                handleBtn.setBackgroundImage(UIImage(named: "app_item_plus"), for: .normal)
+                handleBtn.setBackgroundImage(UIImage.bundlePath("app_item_plus"), for: .normal)
                 handleBtn.addTarget(self, action: #selector(plusBtnClick), for: .touchUpInside)
                 
             } else {

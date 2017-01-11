@@ -28,7 +28,7 @@ class AliView: UIView {
     
     let height = 80
     
-    let app = UIApplication.shared.delegate as! AppDelegate
+    
     
     var currentArr: Array<String>?
     
@@ -52,7 +52,7 @@ class AliView: UIView {
         
         
         
-        self.currentArr = hasMore ? app.currentData : app.nextData
+        self.currentArr = hasMore ? Util.currentData : Util.nextData
        
     }
     
@@ -111,7 +111,7 @@ class AliView: UIView {
                 self.addModel(index: 100 + (self.currentArr?.count)!, title: title, isMore: false)
                 
                 self.currentArr?.append(title)
-                app.currentData.append(title)
+                Util.currentData.append(title)
             }
             
             
@@ -316,9 +316,9 @@ extension AliView: ModelDelegate {
     
     func delete(model: Model) {
         
-        app.currentData.remove(at: model.tag - 100)
+        Util.currentData.remove(at: model.tag - 100)
         
-        app.nextData.append(model.title)
+        Util.nextData.append(model.title)
         
         self.handleModels(model: model)
         
@@ -328,9 +328,9 @@ extension AliView: ModelDelegate {
     
     func add(model: Model) {
         
-        app.nextData.remove(at: model.tag - 100)
+        Util.nextData.remove(at: model.tag - 100)
         
-        app.addData.append(model.title)
+        Util.addData.append(model.title)
         
         self.handleModels(model: model)
         
