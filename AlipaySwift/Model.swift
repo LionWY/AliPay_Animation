@@ -49,7 +49,7 @@ class Model: UIButton {
         }
     }
     
-    var delegate: ModelDelegate? 
+    weak var delegate: ModelDelegate? 
     
     var title: String!
     

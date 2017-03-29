@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ModelDelegate {
+protocol ModelDelegate: class {
     
     var touchPoint: CGPoint { get set}
     
